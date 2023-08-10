@@ -1,0 +1,46 @@
+{
+  "name": "jobsy",
+  "version": "1.0.0",
+  "description": "Track Your Job Search",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "audit-client:fix": "cd client && npm audit fix",
+    "audit-server:fix": "npm audit fix",
+    "audit:fix": "npm run audit-client:fix && npm run audit-server:fix",
+    "install-dependencies": "npm run install-server && npm run install-client",
+    "install-dependencies:prod": "npm run install-server:prod && npm run install-client:prod",
+    "install-client": "cd client && npm install",
+    "install-server": "npm install",
+    "install-client:prod": "cd client && npm install --omit=dev",
+    "install-server:prod": "npm install --omit=dev",
+    "build-client": "cd client && npm run build",
+    "client": "npm start --prefix client",
+    "server": "nodemon main --ignore client",
+    "setup-production": "npm run install-dependencies:prod && npm run build-client",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "start": "node server.js"
+  },
+  "author": "Ishant Dhamija",
+  "devDependencies": {
+    "concurrently": "^6.4.0",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "express-mongo-sanitize": "^2.1.0",
+    "express-rate-limit": "^6.0.4",
+    "helmet": "^5.0.1",
+    "http-status-codes": "^2.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "mongoose": "^6.0.13",
+    "morgan": "^1.10.0",
+    "validator": "^13.7.0",
+    "xss-clean": "^0.1.1"
+  }
+}
