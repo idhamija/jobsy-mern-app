@@ -2,7 +2,7 @@
 
 A portal for the candidates who are applying for jobs at various organisations and want to keep track of the application process at various organisations.
 
-Hosted live at: [https://jobsy-mern-app-production.up.railway.app](https://jobsy-mern-app-production.up.railway.app/)
+Hosted live at: [https://jobsy-mern-app.up.railway.app](https://jobsy-mern-app.up.railway.app/)
 
 Created using MongoDB database.
 
