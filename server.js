@@ -24,23 +24,7 @@ import errorHandlerMiddleware from './middleware/error-handler.js'
 import notFoundMiddleware from './middleware/not-found.js'
 
 const app = express()
-
-const start = async () => {
-  const port = process.env.PORT || 5000
-
-  try {
-    console.log('mongo url', process.env.MONGO_URL)
-    await connectDB(process.env.MONGO_URL)
-    return app.listen(port, () => {
-      console.log(`Server is listening on port ${port}...`)
-    })
-  } catch (error) {
-    console.log(error)
-    return null
-  }
-}
-const listener = start()
-
+let listener = null
 dotenv.config()
 if (process.env.NODE_ENV !== 'production') {
   app.use(morgan('dev'))
@@ -60,11 +44,11 @@ if (process.env.NODE_ENV === 'production') {
   app.use('/api/v1/auth', authRouter)
   app.use('/api/v1/jobs', authenticateUser, jobsRouter)
 
-  app.use('/health', (_, res) => {
+  app.get('/health', (_, res) => {
     if (listener === null) {
-      res.status(500)
+      res.status(500).json({ success: false })
     } else {
-      res.status(200)
+      res.status(200).json({ success: true })
     }
   })
 
@@ -72,10 +56,24 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, './client/build', 'index.html'))
   })
 } else {
-  console.log('Running in development mode')
   app.use('/api/v1/auth', authRouter)
   app.use('/api/v1/jobs', authenticateUser, jobsRouter)
 }
 
 app.use(notFoundMiddleware)
 app.use(errorHandlerMiddleware)
+
+const start = async () => {
+  const port = process.env.PORT || 5000
+
+  try {
+    await connectDB(process.env.MONGO_URL)
+    return app.listen(port, () => {
+      console.log(`Server is listening on port ${port}...`)
+    })
+  } catch (error) {
+    console.log(error)
+    return null
+  }
+}
+listener = start()
