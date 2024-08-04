@@ -1,10 +1,18 @@
 # Job Application Tracker
 
-A portal for the candidates who are applying for jobs at various organisations and want to keep track of the application process at various organisations.
+A portal for candidates applying for jobs at various organizations, allowing them to keep track of their application process.
 
-Hosted live at: [https://jobsy-mern-app.up.railway.app](https://jobsy-mern-app.up.railway.app/)
+Created using the MERN stack.
 
-Created using MongoDB database.
+## To Run Application Using Docker
+
+```
+git clone https://github.com/idhamija/jobsy-mern-app.git
+cd jobsy-mern-app
+docker-compose -f docker-compose.yml up -d
+```
+
+## To run application without using docker
 
 ### Installation
 
@@ -16,7 +24,7 @@ npm run install-dependencies
 
 ### Setup
 
-Create a .env file in the following format:
+Create a .env file in the below given format and replace already .env file with new .env file:
 
 ```
 MONGO_URL = <MONGO_DB_URL>
@@ -38,4 +46,3 @@ npm run dev
 - [Express](https://expressjs.com/) - Node.js Framework for HTTPS Server
 - [Mongoose](http://mongoosejs.com/) - Node.js ORM for MongoDB Database
 - [JWT](https://jwt.io/) - JSON Web Token for Authentication
-
