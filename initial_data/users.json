@@ -1,0 +1,11 @@
+[
+  {
+    "_id": { "$oid": "64d4376e6af7b8c162beb9b7" },
+    "name": "Demo",
+    "email": "demo@jobsy.com",
+    "password": "$2a$10$FM08GdxSMmaj4oT3Cm923ujg4Z6PfvsSUidP/KRKtVgfh6ncbvX3a",
+    "lastName": "",
+    "location": "Delhi",
+    "__v": { "$numberInt": "0" }
+  }
+]

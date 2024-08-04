@@ -1,0 +1,62 @@
+[
+  {
+    "company": "Amazon",
+    "position": "SDE 1",
+    "status": "interview",
+    "jobType": "full-time",
+    "jobLocation": "Bangalore",
+    "createdBy": { "$oid": "64d4376e6af7b8c162beb9b7" },
+    "createdAt": { "$date": { "$numberLong": "1691629576403" } },
+    "updatedAt": { "$date": { "$numberLong": "1691629576403" } }
+  },
+  {
+    "company": "Blue Yonder",
+    "position": "Software Engineer",
+    "status": "pending",
+    "jobType": "full-time",
+    "jobLocation": "Hyderabad",
+    "createdBy": { "$oid": "64d4376e6af7b8c162beb9b7" },
+    "createdAt": { "$date": { "$numberLong": "1691629614604" } },
+    "updatedAt": { "$date": { "$numberLong": "1691629614604" } }
+  },
+  {
+    "company": "Google",
+    "position": "Software Engineering Intern",
+    "status": "pending",
+    "jobType": "internship",
+    "jobLocation": "Bangalore",
+    "createdBy": { "$oid": "64d4376e6af7b8c162beb9b7" },
+    "createdAt": { "$date": { "$numberLong": "1691629700091" } },
+    "updatedAt": { "$date": { "$numberLong": "1691629766842" } }
+  },
+  {
+    "company": "Salesforce",
+    "position": "AMTS",
+    "status": "declined",
+    "jobType": "full-time",
+    "jobLocation": "Hyderabad",
+    "createdBy": { "$oid": "64d4376e6af7b8c162beb9b7" },
+    "createdAt": { "$date": { "$numberLong": "1691629817019" } },
+    "updatedAt": { "$date": { "$numberLong": "1691629817019" } }
+  },
+  {
+    "company": "Adobe",
+    "position": "Software Engineer",
+    "status": "interview",
+    "jobType": "full-time",
+    "jobLocation": "Noida",
+    "createdBy": { "$oid": "64d4376e6af7b8c162beb9b7" },
+    "createdAt": { "$date": { "$numberLong": "1691629854017" } },
+    "updatedAt": { "$date": { "$numberLong": "1691629854017" } }
+  },
+  {
+    "company": "Microsoft",
+    "position": "Backend Engineer",
+    "status": "interview",
+    "jobType": "full-time",
+    "jobLocation": "Gurugram",
+    "createdBy": { "$oid": "64d4376e6af7b8c162beb9b7" },
+    "createdAt": { "$date": { "$numberLong": "1691629913396" } },
+    "updatedAt": { "$date": { "$numberLong": "1691629913396" } }
+  }
+]

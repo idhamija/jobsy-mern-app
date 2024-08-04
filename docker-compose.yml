@@ -1,0 +1,47 @@
+services:
+  app:
+    container_name: mern-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '5000:5000'
+    restart: always
+    command: ['npm', 'start']
+    depends_on:
+      - db
+    networks:
+      - mern-network
+    env_file:
+      - .env
+
+  db:
+    container_name: mongo-db
+    image: mongo
+    ports:
+      - '27017:27017'
+    restart: always
+    volumes:
+      - ./data/mongodata:/var/lib/mongo/data
+    networks:
+      - mern-network
+
+  db-load-data:
+    container_name: mongo-import
+    image: mongo
+    depends_on:
+      - db
+    volumes:
+      - ./initial_data:/initial_data
+    command:
+      - bash
+      - -c
+      - |
+        mongoimport --host mongo-db --db jobsy --collection jobs --type json --file /initial_data/jobs.json --jsonArray &&
+        mongoimport --host mongo-db --db jobsy --collection users --type json --file /initial_data/users.json --jsonArray
+    networks:
+      - mern-network
+
+networks:
+  mern-network:
+    driver: bridge

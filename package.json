@@ -8,6 +8,7 @@
     "audit-client:fix": "cd client && npm audit fix",
     "audit-server:fix": "npm audit fix",
     "audit:fix": "npm run audit-client:fix && npm run audit-server:fix",
+    "docker": "docker-compose -f docker-compose.yml up -d",
     "install-dependencies": "npm run install-server && npm run install-client",
     "install-dependencies:prod": "npm run install-server:prod && npm run install-client:prod",
     "install-client": "cd client && npm install",
@@ -45,6 +46,6 @@
     "xss-clean": "^0.1.1"
   },
   "engines": {
-    "node": ">=16.x"
+    "node": "16.x"
   }
 }

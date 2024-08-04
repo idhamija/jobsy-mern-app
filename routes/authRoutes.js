@@ -8,7 +8,6 @@ import {
 } from '../controllers/authController.js'
 import authenticateUser from '../middleware/auth.js'
 import { apiLimiter } from '../middleware/rate-limiter.js'
-import testUser from '../middleware/testUser.js'
 
 const router = express.Router()
 
@@ -18,7 +17,7 @@ router.post('/login', apiLimiter, login)
 router.get('/logout', logout)
 
 // user routes
-router.patch('/updateUser', authenticateUser, testUser, updateUser)
+router.patch('/updateUser', authenticateUser, updateUser)
 router.get('/getCurrentUser', authenticateUser, getCurrentUser)
 
 export default router

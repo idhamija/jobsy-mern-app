@@ -6,16 +6,15 @@ import {
   showStats,
   updateJob,
 } from '../controllers/jobsController.js'
-import testUser from '../middleware/testUser.js'
 
 const router = express.Router()
 
 router.route('/stats').get(showStats)
 
 router.get('/', getAllJobs)
-router.post('/', testUser, createJob)
+router.post('/', createJob)
 
-router.patch('/:id', testUser, updateJob)
-router.delete('/:id', testUser, deleteJob)
+router.patch('/:id', updateJob)
+router.delete('/:id', deleteJob)
 
 export default router
